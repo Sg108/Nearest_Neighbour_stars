@@ -33,6 +33,9 @@ Pipeline 2: On-Demand Nearest Neighbor Query
                                                           [Power BI Report (Visuals)]
 
 
+# Repository Structure
+This repository is organized to mirror the components within the Microsoft Fabric workspace.
+![image](https://github.com/user-attachments/assets/89acdda4-bc3b-4152-b058-9e41b0d3295a)
 
 # Technologies Used
 Microsoft Fabric:
