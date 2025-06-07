@@ -5,7 +5,7 @@ This repository contains the assets for a Microsoft Fabric project that ingests 
 The project consists of two primary data pipelines designed to create and utilize a model for finding the nearest stars to a given point in 3D space.
 
 # Ingestion & Training Pipeline: 
-This pipeline periodically fetches new or updated data from the Gaia DR3 dataset. The data is staged in a Lakehouse, which triggers a streaming process to load it into a clean Delta table. Finally, a K-Nearest Neighbors (KNN) model is updated or retrained with this new data to ensure it remains current.
+This pipeline periodically fetches new or updated data from the Gaia DR3 dataset. The data is staged in a Lakehouse, which triggers a streaming process to load it into a clean Delta table. Finally, a BucketedRandomProjectionLSH model is updated or retrained with this new data to ensure it remains current.
 
 # Inference & Reporting Pipeline: 
 This pipeline is designed for on-demand analysis. It accepts Galactic coordinates (X, Y, Z in parsecs) as parameters, uses the pre-trained model to find the top 5 nearest neighbors, and pushes the results to a Power BI dataset, which automatically refreshes the user-facing report.
@@ -34,7 +34,7 @@ Pipeline 2: On-Demand Nearest Neighbor Query
 
 
 # Repository Structure
-This repository is organized to mirror the components within the Microsoft Fabric workspace.
+Following are the components within the Microsoft Fabric workspace LakeHouse used.
 ![image](https://github.com/user-attachments/assets/89acdda4-bc3b-4152-b058-9e41b0d3295a)
 
 # Technologies Used
@@ -54,22 +54,19 @@ pyspark: For handling large-scale data in notebooks.
 
 pandas: For data manipulation.
 
-scikit-learn: For building and using the K-Nearest Neighbors model.
+pyspark BucketedRandomProjectionLSH
 
 Data Source: Gaia DR3 (direct download).
 
 How to Set Up and Run
-Prerequisites
+# Prerequisites
 A Microsoft Fabric workspace with necessary permissions.
 
 A Lakehouse created to store the staging data and final Delta Table.
 
-Credentials for the Gaia DR3 data source configured securely in Fabric.
+Get data from Gaia DR3 data source : https://gea.esac.esa.int/archive/
 
-Deployment Steps
-Clone Repository: git clone <repository_url>
-
-Upload Assets to Fabric:
+# Upload Assets to Fabric:
 
 Upload the notebooks from the /notebooks directory into your Fabric workspace.
 
