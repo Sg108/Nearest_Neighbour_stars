@@ -1,0 +1,47 @@
+{
+    "name": "Find_Nearest_Star",
+    "objectId": "575e7123-a4b1-4e8c-bb75-907ee22e336b",
+    "properties": {
+        "activities": [
+            {
+                "name": "Find_Nearest_Stars",
+                "type": "TridentNotebook",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "notebookId": "9170f22a-babc-428d-9272-4f68d59c6b74",
+                    "workspaceId": "b3979a08-4bbe-4d35-b864-4da7d2c8b2b4",
+                    "parameters": {
+                        "x": {
+                            "value": "3.789",
+                            "type": "float"
+                        },
+                        "y": {
+                            "value": "1.890",
+                            "type": "float"
+                        },
+                        "z": {
+                            "value": "2.888",
+                            "type": "float"
+                        },
+                        "id": {
+                            "value": {
+                                "value": "@pipeline().RunId",
+                                "type": "Expression"
+                            },
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        ],
+        "lastModifiedByObjectId": "16b2cf1a-348c-495c-9ea2-151492895a8d",
+        "lastPublishTime": "2025-06-05T23:15:26Z"
+    }
+}

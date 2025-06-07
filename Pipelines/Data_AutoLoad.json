@@ -1,0 +1,49 @@
+{
+    "name": "Data_AutoLoad",
+    "objectId": "b83b7039-18ca-4bee-a715-e601378612e0",
+    "properties": {
+        "activities": [
+            {
+                "name": "IncrementLoad",
+                "type": "TridentNotebook",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "notebookId": "afd0807e-4dbc-4f80-94bf-a271ec044611",
+                    "workspaceId": "b3979a08-4bbe-4d35-b864-4da7d2c8b2b4"
+                }
+            },
+            {
+                "name": "Fit_Model",
+                "type": "TridentNotebook",
+                "dependsOn": [
+                    {
+                        "activity": "IncrementLoad",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "notebookId": "67959a99-e4da-4d4e-ac59-7b58321cfdc8",
+                    "workspaceId": "b3979a08-4bbe-4d35-b864-4da7d2c8b2b4"
+                }
+            }
+        ],
+        "lastModifiedByObjectId": "16b2cf1a-348c-495c-9ea2-151492895a8d",
+        "lastPublishTime": "2025-06-01T20:51:35Z"
+    }
+}
